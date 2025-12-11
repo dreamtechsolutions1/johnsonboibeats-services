@@ -9,10 +9,10 @@
     <meta name="description"
         content="Get your tracks radio-ready with professional mixing and mastering. Crystal clear vocals, punchy drums, and industry-standard loudness.">
 
-    <!-- Google Fonts: Outfit -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -22,63 +22,102 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
+                        sans: ['Montserrat', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#8b5cf6', // Violet
-                        'primary-hover': '#7c3aed',
-                        'dark-bg': '#0f172a',
+                        'brand-green': '#16BB1B',
+                        'brand-green-hover': '#129916',
+                        'dark-bg': '#050505',
                     },
                     boxShadow: {
-                        'glow': '0 0 20px rgba(139, 92, 246, 0.3)',
+                        'glow': '0 0 20px rgba(22, 187, 27, 0.4)',
                     }
                 }
             }
         }
     </script>
+    <style>
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(22, 187, 27, 0.4);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 40px rgba(22, 187, 27, 0.4);
+        }
+        /* Pricing Tabs for Mobile */
+        .pricing-tab {
+            background: #111111;
+            border: 1px solid #27272A;
+            color: #9CA3AF;
+            min-width: 44px;
+            min-height: 44px;
+        }
+        .pricing-tab.active {
+            background: #16BB1B;
+            color: white;
+            border-color: #16BB1B;
+        }
+        /* Pricing Carousel for Mobile */
+        @media (max-width: 767px) {
+            .pricing-container {
+                overflow: hidden;
+            }
+            .pricing-track {
+                display: flex;
+                transition: transform 0.3s ease-in-out;
+            }
+            .pricing-card {
+                min-width: 100%;
+                flex-shrink: 0;
+            }
+            /* Ensure all buttons meet minimum 44x44px touch target */
+            a.inline-flex, button {
+                min-height: 48px;
+            }
+        }
+    </style>
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="font-sans text-slate-900 bg-slate-50 antialiased overflow-x-hidden">
+<body class="font-sans bg-[#050505] text-white leading-relaxed overflow-x-hidden antialiased">
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0 bg-slate-900 text-white">
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-24 md:py-32 lg:py-48 text-center bg-[linear-gradient(to_bottom,rgba(5,5,5,0.3),#050505)]">
         <!-- Background Elements -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
             <div
-                class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-violet-600 rounded-full blur-[120px] opacity-20">
+                class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-green-900 rounded-full blur-[120px] opacity-20">
             </div>
             <div
-                class="absolute top-[40%] -right-[10%] w-[40%] h-[40%] bg-fuchsia-600 rounded-full blur-[100px] opacity-20">
+                class="absolute top-[40%] -right-[10%] w-[40%] h-[40%] bg-emerald-900 rounded-full blur-[100px] opacity-20">
             </div>
         </div>
 
         <div class="container mx-auto px-6 lg:px-12">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Column: Copy -->
-                <div class="max-w-2xl">
+                <div class="max-w-2xl text-left">
                     <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-900/50 border border-violet-500/30 text-violet-300 text-sm font-medium mb-6">
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/30 border border-green-500/30 text-green-400 text-sm font-medium mb-6">
                         <span class="relative flex h-2 w-2">
                             <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
                         </span>
                         Accepting New Clients
                     </div>
-                    <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+                    <h1 class="text-[clamp(32px,7vw,56px)] md:text-[clamp(36px,6vw,48px)] lg:text-[clamp(48px,5vw,62px)] font-black leading-[1.1] tracking-tight uppercase mb-6">
                         Radio-Ready Sound. <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">Professional Mixing & Mastering.</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Professional Mixing & Mastering.</span>
                     </h1>
-                    <p class="text-lg lg:text-xl text-slate-300 mb-8 leading-relaxed">
+                    <p class="text-base md:text-lg lg:text-xl text-gray-400 mb-8 leading-relaxed font-normal">
                         Don't let a bad mix ruin a great song. Get the clarity, depth, and punch your music deserves.
-                        <span class="font-semibold text-white">Industry standard quality, delivered fast.</span>
+                        <span class="font-bold text-white">Industry standard quality, delivered fast.</span>
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#pricing"
-                            class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-violet-600 rounded-xl hover:bg-violet-700 hover:shadow-glow hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-600">
+                            class="inline-flex items-center justify-center px-8 py-4 text-lg font-black uppercase tracking-wide text-white transition-all duration-300 bg-brand-green rounded-xl hover:bg-brand-green-hover btn-glow hover:-translate-y-0.5 border border-white/10">
                             View Packages
                             <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
                         </a>
@@ -86,21 +125,21 @@
                 </div>
 
                 <!-- Right Column: Visual -->
-                <div class="relative flex justify-center lg:justify-end">
-                    <div class="relative w-full max-w-lg bg-slate-800 rounded-2xl p-6 shadow-2xl border border-slate-700 transform rotate-1">
+                <div class="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
+                    <div class="relative w-full max-w-lg bg-[#111111] rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#27272A] transform rotate-1">
                          <!-- EQ Visual Representation -->
                          <div class="flex items-end justify-between h-48 gap-1 mb-4">
-                            <div class="w-full bg-violet-500/20 rounded-t h-[40%] animate-pulse"></div>
-                            <div class="w-full bg-violet-500/40 rounded-t h-[60%]"></div>
-                            <div class="w-full bg-violet-500/60 rounded-t h-[30%]"></div>
-                            <div class="w-full bg-violet-500/80 rounded-t h-[80%] animate-pulse" style="animation-delay: 0.1s"></div>
-                            <div class="w-full bg-violet-500 rounded-t h-[50%]"></div>
-                            <div class="w-full bg-violet-500/80 rounded-t h-[90%] animate-pulse" style="animation-delay: 0.2s"></div>
-                            <div class="w-full bg-violet-500/60 rounded-t h-[70%]"></div>
-                            <div class="w-full bg-violet-500/40 rounded-t h-[45%]"></div>
-                            <div class="w-full bg-violet-500/20 rounded-t h-[20%]"></div>
+                            <div class="w-full bg-green-500/20 rounded-t h-[40%] animate-pulse"></div>
+                            <div class="w-full bg-green-500/40 rounded-t h-[60%]"></div>
+                            <div class="w-full bg-green-500/60 rounded-t h-[30%]"></div>
+                            <div class="w-full bg-brand-green rounded-t h-[80%] animate-pulse" style="animation-delay: 0.1s"></div>
+                            <div class="w-full bg-green-600 rounded-t h-[50%]"></div>
+                            <div class="w-full bg-brand-green rounded-t h-[90%] animate-pulse" style="animation-delay: 0.2s"></div>
+                            <div class="w-full bg-green-500/60 rounded-t h-[70%]"></div>
+                            <div class="w-full bg-green-500/40 rounded-t h-[45%]"></div>
+                            <div class="w-full bg-green-500/20 rounded-t h-[20%]"></div>
                          </div>
-                         <div class="flex justify-between text-xs text-slate-400 font-mono">
+                         <div class="flex justify-between text-xs text-gray-500 font-mono">
                             <span>20Hz</span>
                             <span>1kHz</span>
                             <span>20kHz</span>
@@ -108,17 +147,17 @@
                          
                          <!-- Faders -->
                          <div class="mt-6 flex justify-between px-4">
-                            <div class="w-2 h-24 bg-slate-900 rounded-full relative">
-                                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-6 h-10 bg-slate-700 rounded shadow border-t border-slate-600"></div>
+                            <div class="w-2 h-24 bg-black rounded-full relative">
+                                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-6 h-10 bg-[#333] rounded shadow border-t border-[#444]"></div>
                             </div>
-                            <div class="w-2 h-24 bg-slate-900 rounded-full relative">
-                                <div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-6 h-10 bg-slate-700 rounded shadow border-t border-slate-600"></div>
+                            <div class="w-2 h-24 bg-black rounded-full relative">
+                                <div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-6 h-10 bg-[#333] rounded shadow border-t border-[#444]"></div>
                             </div>
-                            <div class="w-2 h-24 bg-slate-900 rounded-full relative">
-                                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-6 h-10 bg-violet-600 rounded shadow border-t border-violet-400"></div>
+                            <div class="w-2 h-24 bg-black rounded-full relative">
+                                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-6 h-10 bg-brand-green rounded shadow border-t border-green-400"></div>
                             </div>
-                            <div class="w-2 h-24 bg-slate-900 rounded-full relative">
-                                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-6 h-10 bg-slate-700 rounded shadow border-t border-slate-600"></div>
+                            <div class="w-2 h-24 bg-black rounded-full relative">
+                                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-6 h-10 bg-[#333] rounded shadow border-t border-[#444]"></div>
                             </div>
                          </div>
                     </div>
@@ -128,145 +167,236 @@
     </section>
 
     <!-- Why Us Section -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-[#0A0A0A] border-t border-[#27272A]">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-4">Transform Your Rough Mix into a Masterpiece</h2>
-                <p class="text-lg text-slate-600">We treat every track with the attention it deserves. Here is what you get.</p>
+                <h2 class="text-[clamp(32px,5vw,50px)] font-black text-white mb-4 uppercase">Transform Your Rough Mix into a Masterpiece</h2>
+                <p class="text-lg text-gray-400">We treat every track with the attention it deserves. Here is what you get.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center mb-6">
+                <div class="p-8 rounded-2xl bg-[#111111] border border-[#27272A] hover:border-brand-green transition-colors duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-green-900/20 text-brand-green flex items-center justify-center mb-6">
                         <i data-lucide="mic-2" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Vocal Clarity</h3>
-                    <p class="text-slate-600">Crisp, present vocals that sit perfectly in the mix without being harsh.</p>
+                    <h3 class="text-xl font-bold text-white mb-3 uppercase">Vocal Clarity</h3>
+                    <p class="text-gray-400">Crisp, present vocals that sit perfectly in the mix without being harsh.</p>
                 </div>
 
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div class="w-12 h-12 rounded-xl bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center mb-6">
+                <div class="p-8 rounded-2xl bg-[#111111] border border-[#27272A] hover:border-brand-green transition-colors duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-green-900/20 text-brand-green flex items-center justify-center mb-6">
                         <i data-lucide="music-2" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Punch & Dynamics</h3>
-                    <p class="text-slate-600">Drums that knock and bass that fills the room, while maintaining dynamic range.</p>
+                    <h3 class="text-xl font-bold text-white mb-3 uppercase">Punch & Dynamics</h3>
+                    <p class="text-gray-400">Drums that knock and bass that fills the room, while maintaining dynamic range.</p>
                 </div>
 
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6">
+                <div class="p-8 rounded-2xl bg-[#111111] border border-[#27272A] hover:border-brand-green transition-colors duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-green-900/20 text-brand-green flex items-center justify-center mb-6">
                         <i data-lucide="maximize" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Competitive Loudness</h3>
-                    <p class="text-slate-600">Mastered to industry standards so your track stands up against major label releases on Spotify & Apple Music.</p>
+                    <h3 class="text-xl font-bold text-white mb-3 uppercase">Competitive Loudness</h3>
+                    <p class="text-gray-400">Mastered to industry standards so your track stands up against major label releases on Spotify & Apple Music.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-slate-900 text-white">
+    <section id="pricing" class="py-24 bg-[#050505] border-t border-[#27272A]">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-slate-400">Choose the package that fits your project needs.</p>
+                <h2 class="text-[clamp(32px,5vw,50px)] font-black text-white mb-4 uppercase">Simple, Transparent Pricing</h2>
+                <p class="text-gray-400">Choose the package that fits your project needs.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Mobile Pricing Tabs -->
+            <div class="md:hidden flex justify-center gap-2 mt-8 mb-6">
+                <button onclick="showPlan(0)" class="pricing-tab active px-6 py-3 rounded-lg font-bold text-sm transition-all">SINGLE</button>
+                <button onclick="showPlan(1)" class="pricing-tab px-6 py-3 rounded-lg font-bold text-sm transition-all">DOUBLE</button>
+                <button onclick="showPlan(2)" class="pricing-tab px-6 py-3 rounded-lg font-bold text-sm transition-all">BUNDLE</button>
+            </div>
+
+            <!-- Mobile: Carousel -->
+            <div class="md:hidden pricing-container">
+                <div class="pricing-track flex transition-transform duration-300 ease-in-out">
+                    <!-- Single -->
+                    <div class="pricing-card min-w-full px-2">
+                        <div class="bg-[#111111] border border-[#27272A] rounded-3xl p-10 text-center transition-all duration-300 hover:border-brand-green hover:bg-[#161616] flex flex-col">
+                            <h3 class="text-brand-green text-2xl mb-4 font-bold">SINGLE TRACK</h3>
+                            <div class="text-[3.5rem] font-extrabold text-white leading-none mb-2">$500</div>
+                            <div class="text-lg mb-8 text-gray-400 font-normal">One-time payment.</div>
+                            <ul class="space-y-4 mb-8 flex-1 text-left">
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Full Mix & Master
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Vocal Tuning Included
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> High-Quality WAV & MP3
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> 2 Revisions
+                                </li>
+                            </ul>
+                            <a href="https://buy.stripe.com/1-song-placeholder" target="_blank"
+                                class="inline-flex items-center justify-center bg-brand-green text-white px-6 py-3 rounded-xl font-black text-base uppercase tracking-wide transition-all duration-300 btn-glow hover:bg-brand-green-hover hover:-translate-y-0.5 border border-white/10 w-full">
+                                BUY NOW
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Double -->
+                    <div class="pricing-card min-w-full px-2">
+                         <div class="bg-[#111111] border-2 border-brand-green rounded-3xl p-10 text-center transition-all duration-300 hover:bg-[#161616] flex flex-col shadow-[0_0_30px_rgba(22,187,27,0.1)]">
+                            <h3 class="text-brand-green text-2xl mb-4 font-bold">DOUBLE FEATURE</h3>
+                            <div class="text-[3.5rem] font-extrabold text-white leading-none mb-2">$950</div>
+                            <p class="text-sm text-brand-green font-bold mb-6">SAVE $50</p>
+                            <ul class="space-y-4 mb-8 flex-1 text-left">
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Everything in Single
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> 2 Songs Mixed & Mastered
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Unified Sound Quality
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Priority Turnaround
+                                </li>
+                            </ul>
+                            <a href="https://buy.stripe.com/2-songs-placeholder" target="_blank"
+                                class="inline-flex items-center justify-center bg-brand-green text-white px-6 py-3 rounded-xl font-black text-base uppercase tracking-wide transition-all duration-300 btn-glow hover:bg-brand-green-hover hover:-translate-y-0.5 border border-white/10 w-full">
+                                GET STARTED
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Bundle -->
+                    <div class="pricing-card min-w-full px-2">
+                        <div class="bg-[#111111] border border-[#27272A] rounded-3xl p-10 text-center transition-all duration-300 hover:border-brand-green hover:bg-[#161616] flex flex-col">
+                            <h3 class="text-brand-green text-2xl mb-4 font-bold">EP BUNDLE</h3>
+                            <div class="text-[3.5rem] font-extrabold text-white leading-none mb-2">$1,250</div>
+                            <p class="text-sm text-green-400 font-bold mb-6">SAVE $250</p>
+                            <ul class="space-y-4 mb-8 flex-1 text-left">
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Everything in Single
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> 3 Songs Mixed & Mastered
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Cohesive Project Mastering
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                                    <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> 3 Revisions per song
+                                </li>
+                            </ul>
+                            <a href="https://buy.stripe.com/3-songs-placeholder" target="_blank"
+                                class="inline-flex items-center justify-center bg-brand-green text-white px-6 py-3 rounded-xl font-black text-base uppercase tracking-wide transition-all duration-300 btn-glow hover:bg-brand-green-hover hover:-translate-y-0.5 border border-white/10 w-full">
+                                BUY BUNDLE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Single -->
-                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 flex flex-col hover:border-violet-500 transition-colors">
-                    <h3 class="text-2xl font-bold text-white mb-2">Single Track</h3>
-                    <p class="text-slate-400 mb-6">Perfect for your next single release.</p>
+                <div class="bg-[#111111] border border-[#27272A] rounded-3xl p-8 flex flex-col hover:border-brand-green hover:bg-[#161616] transition-all duration-300 hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-2 uppercase">Single Track</h3>
+                    <p class="text-gray-400 mb-6">Perfect for your next single release.</p>
                     <div class="text-4xl font-extrabold text-white mb-6">$500</div>
                     
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-sm text-slate-300">
-                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Full Mix & Master
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Full Mix & Master
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300">
-                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Vocal Tuning Included
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Vocal Tuning Included
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300">
-                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i> High-Quality WAV & MP3
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> High-Quality WAV & MP3
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300">
-                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i> 2 Revisions
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> 2 Revisions
                         </li>
                     </ul>
 
                     <a href="https://buy.stripe.com/1-song-placeholder" target="_blank"
-                        class="block w-full py-4 px-6 bg-slate-700 hover:bg-slate-600 text-white font-bold text-center rounded-xl transition-all">
+                        class="block w-full py-4 px-6 bg-[#27272A] hover:bg-[#333] text-white font-black uppercase tracking-wide text-center rounded-xl transition-all border border-white/5">
                         Buy Now
                     </a>
                 </div>
 
-                <!-- 2 Songs (Best Value Logic - although 3 is better, this is the middle ground) -->
-                <div class="bg-violet-900/20 rounded-3xl p-8 border-2 border-violet-500 flex flex-col relative transform scale-105 shadow-2xl shadow-violet-900/20">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
-                        POPULAR
+                <!-- 2 Songs -->
+                <div class="bg-[#111111] border-2 border-brand-green rounded-3xl p-8 flex flex-col relative transform scale-105 shadow-[0_0_30px_rgba(22,187,27,0.1)] hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg uppercase tracking-wide">
+                        Popular
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Double Feature</h3>
-                    <p class="text-violet-200 mb-6">Two tracks. Consistent sound.</p>
-                    <div class="text-4xl font-extrabold text-white mb-6">$950</div>
-                    <p class="text-xs text-violet-300 -mt-4 mb-6">Save $50</p>
+                    <h3 class="text-2xl font-bold text-white mb-2 uppercase">Double Feature</h3>
+                    <p class="text-gray-400 mb-6">Two tracks. Consistent sound.</p>
+                    <div class="text-4xl font-extrabold text-white mb-2">$950</div>
+                    <p class="text-sm text-brand-green font-bold mb-6">SAVE $50</p>
                     
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-sm text-white">
-                            <i data-lucide="check" class="w-4 h-4 text-violet-300"></i> Everything in Single
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Everything in Single
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-white">
-                            <i data-lucide="check" class="w-4 h-4 text-violet-300"></i> 2 Songs Mixed & Mastered
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> 2 Songs Mixed & Mastered
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-white">
-                            <i data-lucide="check" class="w-4 h-4 text-violet-300"></i> Unified Sound Quality
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Unified Sound Quality
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-white">
-                            <i data-lucide="check" class="w-4 h-4 text-violet-300"></i> Priority Turnaround
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Priority Turnaround
                         </li>
                     </ul>
 
                     <a href="https://buy.stripe.com/2-songs-placeholder" target="_blank"
-                        class="block w-full py-4 px-6 bg-violet-600 hover:bg-violet-700 text-white font-bold text-center rounded-xl transition-all hover:shadow-glow">
+                        class="block w-full py-4 px-6 bg-brand-green hover:bg-brand-green-hover text-white font-black uppercase tracking-wide text-center rounded-xl transition-all hover:shadow-glow border border-white/10">
                         Get Started
                     </a>
                 </div>
 
                 <!-- 3 Songs -->
-                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 flex flex-col hover:border-violet-500 transition-colors">
-                    <h3 class="text-2xl font-bold text-white mb-2">EP Bundle</h3>
-                    <p class="text-slate-400 mb-6">Best value for small projects.</p>
-                    <div class="text-4xl font-extrabold text-white mb-6">$1,250</div>
-                     <p class="text-xs text-green-400 -mt-4 mb-6">Save $250</p>
+                <div class="bg-[#111111] border border-[#27272A] rounded-3xl p-8 flex flex-col hover:border-brand-green hover:bg-[#161616] transition-all duration-300 hover:-translate-y-2">
+                    <h3 class="text-2xl font-bold text-white mb-2 uppercase">EP Bundle</h3>
+                    <p class="text-gray-400 mb-6">Best value for small projects.</p>
+                    <div class="text-4xl font-extrabold text-white mb-2">$1,250</div>
+                     <p class="text-sm text-green-400 font-bold mb-6">SAVE $250</p>
                     
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-sm text-slate-300">
-                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Everything in Single
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Everything in Single
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300">
-                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i> 3 Songs Mixed & Mastered
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> 3 Songs Mixed & Mastered
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300">
-                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i> Cohesive Project Mastering
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> Cohesive Project Mastering
                         </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300">
-                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i> 3 Revisions per song
+                        <li class="flex items-center gap-3 text-sm text-gray-300 font-medium">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-green"></i> 3 Revisions per song
                         </li>
                     </ul>
 
                     <a href="https://buy.stripe.com/3-songs-placeholder" target="_blank"
-                        class="block w-full py-4 px-6 bg-slate-700 hover:bg-slate-600 text-white font-bold text-center rounded-xl transition-all">
+                        class="block w-full py-4 px-6 bg-[#27272A] hover:bg-[#333] text-white font-black uppercase tracking-wide text-center rounded-xl transition-all border border-white/5">
                         Buy Bundle
                     </a>
                 </div>
             </div>
             
-            <div class="mt-12 text-center text-slate-400 text-sm">
-                Need a full album mix? <a href="mailto:contact@johnsonboibeats.com" class="text-violet-400 hover:text-violet-300 underline">Contact us</a> for a custom quote.
+            <div class="mt-12 text-center text-gray-400 text-sm">
+                Need a full album mix? <a href="mailto:contact@johnsonboibeats.com" class="text-brand-green hover:text-green-400 underline decoration-brand-green/30 underline-offset-4">Contact us</a> for a custom quote.
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 py-12 border-t border-slate-800 text-slate-400">
+    <footer class="bg-black py-12 border-t border-[#27272A] text-gray-400">
         <div class="container mx-auto px-6 text-center">
             <p class="text-sm">
                 &copy; <script>document.write(new Date().getFullYear())</script> JohnsonBoiBeats. All rights reserved.
@@ -277,6 +407,58 @@
     <!-- Initialize Lucide Icons -->
     <script>
         lucide.createIcons();
+
+        // Pricing Carousel - Current index
+        let currentPricingPlan = 0;
+
+        // Pricing Tab Switcher for Mobile
+        function showPlan(index) {
+            const track = document.querySelector('.pricing-track');
+            const tabs = document.querySelectorAll('.pricing-tab');
+
+            if (track) {
+                currentPricingPlan = index;
+                track.style.transform = `translateX(-${index * 100}%)`;
+
+                // Update tab active states
+                tabs.forEach((tab, i) => {
+                    if (i === index) {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+        // Touch/Swipe support for pricing carousel
+        window.addEventListener('DOMContentLoaded', () => {
+            const pricingCarousel = document.querySelector('.pricing-container');
+            if (pricingCarousel) {
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                pricingCarousel.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+
+                pricingCarousel.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handlePricingSwipe();
+                });
+
+                function handlePricingSwipe() {
+                    const swipeThreshold = 50;
+                    if (touchStartX - touchEndX > swipeThreshold && currentPricingPlan < 2) {
+                        // Swipe left - next
+                        showPlan(currentPricingPlan + 1);
+                    } else if (touchEndX - touchStartX > swipeThreshold && currentPricingPlan > 0) {
+                        // Swipe right - previous
+                        showPlan(currentPricingPlan - 1);
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>

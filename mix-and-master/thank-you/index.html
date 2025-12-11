@@ -7,10 +7,10 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Payment Successful - Upload Your Tracks</title>
 
-    <!-- Google Fonts: Outfit -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -20,12 +20,15 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
+                        sans: ['Montserrat', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#8b5cf6', // Violet
-                        'primary-hover': '#7c3aed',
-                        'dark-bg': '#0f172a',
+                        'brand-green': '#16BB1B',
+                        'brand-green-hover': '#129916',
+                        'dark-bg': '#050505',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(22, 187, 27, 0.4)',
                     }
                 }
             }
@@ -34,43 +37,52 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(22, 187, 27, 0.4);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 40px rgba(22, 187, 27, 0.4);
+        }
+    </style>
 </head>
 
-<body class="font-sans text-slate-900 bg-slate-50 min-h-screen flex flex-col">
+<body class="font-sans bg-[#050505] text-white leading-relaxed overflow-x-hidden antialiased min-h-screen flex flex-col">
 
     <!-- Header/Nav (Minimal) -->
-    <nav class="bg-slate-900 border-b border-slate-800 py-4">
+    <nav class="bg-black border-b border-[#27272A] py-4">
         <div class="container mx-auto px-6 text-center">
-            <span class="font-bold text-xl tracking-tight text-white">JohnsonBoiBeats</span>
+            <span class="font-black text-xl tracking-tight text-white uppercase">JohnsonBoiBeats</span>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl w-full space-y-8 bg-white p-8 sm:p-12 rounded-2xl shadow-xl border border-slate-100">
+        <div class="max-w-3xl w-full space-y-8 bg-[#111111] p-8 sm:p-12 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#27272A]">
 
             <!-- Success Icon & Headline -->
             <div class="text-center">
-                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-violet-100 mb-6">
-                    <i data-lucide="check" class="h-8 w-8 text-violet-600"></i>
+                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-900/20 mb-6 border border-brand-green/20">
+                    <i data-lucide="check" class="h-8 w-8 text-brand-green"></i>
                 </div>
-                <h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl mb-4">
+                <h1 class="text-3xl font-black text-white sm:text-4xl mb-4 uppercase">
                     Payment Successful! <br>Let's get to work.
                 </h1>
-                <p class="text-lg text-slate-600 mb-8">
+                <p class="text-lg text-gray-400 mb-8">
                     To start your session, we need your files and some info about your vision.
                 </p>
             </div>
 
             <!-- Instructions Box -->
-            <div class="bg-violet-50 border-l-4 border-violet-500 p-4 mb-8 rounded-r-lg">
+            <div class="bg-green-900/10 border-l-4 border-brand-green p-4 mb-8 rounded-r-lg">
                 <div class="flex items-start">
                     <div class="flex-shrink-0">
-                        <i data-lucide="info" class="h-5 w-5 text-violet-500"></i>
+                        <i data-lucide="info" class="h-5 w-5 text-brand-green"></i>
                     </div>
                     <div class="ml-3">
-                        <h3 class="text-sm font-medium text-violet-800">How to prepare your files:</h3>
-                        <div class="mt-2 text-sm text-violet-700">
+                        <h3 class="text-sm font-bold text-green-400 uppercase">How to prepare your files:</h3>
+                        <div class="mt-2 text-sm text-gray-300">
                             <ul class="list-disc list-inside space-y-1">
                                 <li>Export <strong>WAV stems</strong> (not just the beat and vocals separately, but individual tracks if possible).</li>
                                 <li>Ensure no limiters are on the master bus.</li>
@@ -89,69 +101,69 @@
 
                     <!-- Artist Info -->
                     <div>
-                        <label for="artist-name" class="block text-sm font-medium text-slate-700 mb-1">Artist / Group Name</label>
+                        <label for="artist-name" class="block text-sm font-bold text-gray-400 mb-1 uppercase tracking-wide">Artist / Group Name</label>
                         <input type="text" name="artist-name" id="artist-name" required
-                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 outline-none transition-colors">
+                            class="w-full px-4 py-3 bg-black border border-[#27272A] rounded-xl focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition-colors text-white placeholder-gray-600">
                     </div>
 
                     <div>
-                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Your Email</label>
+                        <label for="email" class="block text-sm font-bold text-gray-400 mb-1 uppercase tracking-wide">Your Email</label>
                         <input type="email" name="email" id="email" required
-                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 outline-none transition-colors">
+                            class="w-full px-4 py-3 bg-black border border-[#27272A] rounded-xl focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition-colors text-white placeholder-gray-600">
                     </div>
 
                     <div>
-                        <label for="song-titles" class="block text-sm font-medium text-slate-700 mb-1">Song Title(s)</label>
+                        <label for="song-titles" class="block text-sm font-bold text-gray-400 mb-1 uppercase tracking-wide">Song Title(s)</label>
                         <input type="text" name="song-titles" id="song-titles" placeholder="e.g. 'Midnight Drive', 'Summer Vibes'"
-                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 outline-none transition-colors">
+                            class="w-full px-4 py-3 bg-black border border-[#27272A] rounded-xl focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition-colors text-white placeholder-gray-600">
                     </div>
 
                     <!-- File Link -->
                     <div>
-                        <label for="file-link" class="block text-sm font-medium text-slate-700 mb-1">Link to Stems (Dropbox, Google Drive, WeTransfer)</label>
+                        <label for="file-link" class="block text-sm font-bold text-gray-400 mb-1 uppercase tracking-wide">Link to Stems (Dropbox, Google Drive, WeTransfer)</label>
                         <input type="url" name="file-link" id="file-link" required placeholder="https://..."
-                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 outline-none transition-colors">
-                        <p class="mt-1 text-xs text-slate-500">Make sure the link is set to "Anyone with the link" can view/download.</p>
+                            class="w-full px-4 py-3 bg-black border border-[#27272A] rounded-xl focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition-colors text-white placeholder-gray-600">
+                        <p class="mt-1 text-xs text-gray-500">Make sure the link is set to "Anyone with the link" can view/download.</p>
                     </div>
 
                     <!-- References -->
                     <div>
-                        <label for="references" class="block text-sm font-medium text-slate-700 mb-1">Reference Tracks / Sound Vision</label>
+                        <label for="references" class="block text-sm font-bold text-gray-400 mb-1 uppercase tracking-wide">Reference Tracks / Sound Vision</label>
                         <textarea name="references" id="references" rows="3"
                             placeholder="Paste links to songs you want yours to sound like (e.g. 'Drake vocals', 'The Weeknd reverb'). Describe the vibe."
-                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 outline-none transition-colors"></textarea>
+                            class="w-full px-4 py-3 bg-black border border-[#27272A] rounded-xl focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition-colors text-white placeholder-gray-600"></textarea>
                     </div>
 
                     <!-- Technical Info -->
                     <div>
-                        <label for="notes" class="block text-sm font-medium text-slate-700 mb-1">Additional Notes (BPM, Key, Special Requests)</label>
+                        <label for="notes" class="block text-sm font-bold text-gray-400 mb-1 uppercase tracking-wide">Additional Notes (BPM, Key, Special Requests)</label>
                         <textarea name="notes" id="notes" rows="3"
                             placeholder="Any specific requests? Auto-tune settings? Radio edit needed?"
-                            class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 outline-none transition-colors"></textarea>
+                            class="w-full px-4 py-3 bg-black border border-[#27272A] rounded-xl focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none transition-colors text-white placeholder-gray-600"></textarea>
                     </div>
 
                     <!-- Submit Button -->
                     <button type="submit"
-                        class="w-full py-3 px-6 bg-violet-600 hover:bg-violet-700 text-white font-bold text-lg rounded-xl transition-all duration-200 shadow-lg hover:shadow-violet-500/30 hover:-translate-y-1">
+                        class="w-full py-4 px-6 bg-brand-green hover:bg-brand-green-hover text-white font-black text-lg uppercase tracking-wide rounded-xl transition-all duration-200 btn-glow hover:-translate-y-0.5 border border-white/10">
                         Submit Project Details
                     </button>
                 </form>
             </div>
 
             <!-- Support Info -->
-            <div class="text-center pt-6 border-t border-slate-100">
-                <p class="text-sm text-slate-500">
+            <div class="text-center pt-6 border-t border-[#27272A]">
+                <p class="text-sm text-gray-500">
                     Questions? Email us at <a href="mailto:contact@johnsonboibeats.com"
-                        class="text-violet-600 hover:underline">contact@johnsonboibeats.com</a>
+                        class="text-brand-green hover:text-green-400 underline decoration-brand-green/30 underline-offset-4">contact@johnsonboibeats.com</a>
                 </p>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white py-6 border-t border-slate-100">
+    <footer class="bg-black py-6 border-t border-[#27272A]">
         <div class="container mx-auto px-6 text-center">
-            <p class="text-slate-500 text-sm">
+            <p class="text-gray-600 text-sm">
                 &copy; <script>document.write(new Date().getFullYear())</script> JohnsonBoiBeats. All rights reserved.
             </p>
         </div>
