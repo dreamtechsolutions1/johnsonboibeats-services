@@ -436,6 +436,73 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-24 bg-[#0A0A0A] border-t border-[#27272A]">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[clamp(32px,5vw,50px)] font-black text-white mb-4 uppercase">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-400">Everything you need to know about our process.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-[#27272A] rounded-2xl bg-[#111111] overflow-hidden">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-bold text-white uppercase">How do I send my files?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-green transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-8 pb-8 text-gray-400 leading-relaxed">
+                        After payment, you'll be redirected to a secure upload page. We recommend sending <strong>WAV stems</strong> (individual tracks like 'Kick', 'Snare', 'Vocal') in a zipped folder. Please ensure no limiters are on your master channel.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-[#27272A] rounded-2xl bg-[#111111] overflow-hidden">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-bold text-white uppercase">What is the turnaround time?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-green transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-8 pb-8 text-gray-400 leading-relaxed">
+                        Standard turnaround is <strong>3-5 business days</strong>. If you need it sooner, please contact us for express options. We prioritize quality to ensure your track sounds its best.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-[#27272A] rounded-2xl bg-[#111111] overflow-hidden">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-bold text-white uppercase">Do you offer revisions?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-green transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-8 pb-8 text-gray-400 leading-relaxed">
+                        Yes! Every package includes revisions (2 for Single/Double, 3 per song for EP Bundle). We work with you until you are 100% happy with the vibe and balance of your track.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-[#27272A] rounded-2xl bg-[#111111] overflow-hidden">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-bold text-white uppercase">What formats do you deliver?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-green transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-8 pb-8 text-gray-400 leading-relaxed">
+                        You will receive a high-quality <strong>24-bit WAV file</strong> (for streaming/distribution) and a <strong>320kbps MP3</strong> (for easy sharing). We can also provide instrumental or performance mixes upon request.
+                    </div>
+                </div>
+                 
+                 <!-- FAQ Item 5 -->
+                <div class="border border-[#27272A] rounded-2xl bg-[#111111] overflow-hidden">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-bold text-white uppercase">What if I'm not happy with the mix?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-green transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-8 pb-8 text-gray-400 leading-relaxed">
+                        We pride ourselves on communication. If the first version isn't right, your included revisions allow us to tweak it. We encourage providing reference tracks so we understand your vision from the start.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-black py-12 border-t border-[#27272A] text-gray-400">
         <div class="container mx-auto px-6 text-center">
@@ -500,6 +567,31 @@
                 }
             }
         });
+
+        // FAQ Accordion
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close other open FAQs (Optional - for accordion behavior)
+            /*
+            const allContents = document.querySelectorAll('.faq-content');
+            allContents.forEach(c => {
+                if (c !== content) c.classList.add('hidden');
+            });
+            */
+
+            content.classList.toggle('hidden');
+            
+            // Rotate Icon
+            if (content.classList.contains('hidden')) {
+                icon.style.transform = 'rotate(0deg)';
+                button.classList.remove('text-brand-green'); 
+            } else {
+                icon.style.transform = 'rotate(180deg)';
+                button.classList.add('text-brand-green');
+            }
+        }
     </script>
 </body>
 </html>
